@@ -79,3 +79,24 @@ Passo a passo para a solução do proplema proposto:
     Parameters:
 
     - 1.  
+
+    ----------------------------------------------------------
+
+
+    References:
+
+    1. https://www.mysqltutorial.org/mysql-application-programming-interfaces/
+    2. https://www.mysqltutorial.org/getting-started-with-mysql/connect-to-mysql-server/
+    3. https://dev.mysql.com/doc/connector-python/en/connector-python-installation-binary.html
+    4. https://dev.mysql.com/doc/connector-python/en/onnector-python-example-cursor-transaction.html
+    5. https://dev.mysql.com/doc/refman/8.0/en/spatial-types.html
+    6. https://mothishdeenadayalan.medium.com/containerizing-a-python-app-mysql-python-docker-1ce64e444ed9
+    7. https://hub.docker.com/_/mysql
+    8. https://docs.python.org/3/library/socket.html
+    9. https://docs.python.org/3/library/sched.html
+    10. https://docs.python.org/3/library/socketserver.html
+    11. https://books.goalkicker.com/PythonBook/
+    12. https://realpython.com/python-sockets/
+    13. https://realpython.com/async-io-python/
+    14. https://realpython.com/location-based-app-with-geodjango-tutorial/
+    15. https://www.tornadoweb.org/en/stable/
