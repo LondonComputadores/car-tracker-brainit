@@ -1,0 +1,37 @@
+# FROM python:3.9
+
+# COPY requirements.txt /app/requirements.txt
+# RUN pip install -r /app/requirements.txt
+
+# COPY gateway_tratamento.py /app/gateway_tratamento.py
+# COPY db_config.py /app/db_config.py
+
+# WORKDIR /app
+
+FROM python:3.10.8-slim-buster
+#FROM python:3.9
+
+# set working directory
+#RUN mkdir -p /app
+WORKDIR /.
+
+# set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# install system dependencies
+RUN apt-get update \
+  && apt-get -y install netcat gcc \
+  && apt-get clean
+
+# install python dependencies
+RUN pip install --upgrade pip
+COPY ./requirements.txt ./requirements.txt
+RUN pip install --no-cache-dir --upgrade -r ./requirements.txt
+
+COPY ./gateway_tratamento.py ./gateway_tratamento.py
+COPY ./db_config.py ./db_config.py
+
+COPY . .
+
+CMD ["python", "gateway_tratamento.py"]

@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  entrada:
+    build:
+      context: .
+      dockerfile: Dockerfile_gateway_entrada
+    restart: always
+    depends_on:
+      - db
+  tratamento:
+    build:
+      context: .
+      dockerfile: Dockerfile_gateway_tratamento
+    restart: always
+    depends_on:
+      - db
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: admin1
+      MYSQL_DATABASE: tabela
+    ports:
+      - "3306:3306"
